@@ -13,7 +13,7 @@ void encrypting(int,string); // encrypts the user message according to the key
 void decryption(int,string); // decrypts the user message according to the key
 int main()
 {
-    cout<<"Welcome to Cryptography"<<endl << endl;
+    cout << "Welcome to Cryptography"<<endl << endl;
     validate(); //Function call for validation
     return 0;
 }
@@ -29,13 +29,13 @@ void validate(){
     while (userChoice != "exit"){
         cout << "What would you like to do to a message? (encrypt, decrypt, exit)" << endl;
         cout << "Enter your choice: ";
-        cin>>userChoice;
+        cin > >userChoice;
         
         while(userChoice != "encrypt" && userChoice != "decrypt" && userChoice != "exit"){
-            cout<<"Invalid message"<< endl << endl;
-            cout<<"What would you like to do to a message? (encrypt, decrypt, exit) "<<endl;
-            cout<<"Enter your choice: ";
-            cin>>userChoice;
+            cout << "Invalid message"<< endl << endl;
+            cout << "What would you like to do to a message? (encrypt, decrypt, exit) "<<endl;
+            cout << "Enter your choice: ";
+            cin >> userChoice;
         }
         
         if (userChoice == "exit"){ //Action to take if user chooses to exit
@@ -47,8 +47,8 @@ void validate(){
         
         cout << "Enter your Message: "<<endl;//Asking for input for the message
         getline(cin,userMessage);
-        cout<<"Enter the key number (1-35)\n";//Asking for key value
-        cin>>key;
+        cout << "Enter the key number (1-35)\n";//Asking for key value
+        cin >> key;
         
         while (key <= 0 || key > 35){//Checks if the input for the key is correct
             cout << endl << "Invalid Key number" << endl << endl;
@@ -59,15 +59,15 @@ void validate(){
             if (userChoice == "exit"){//Action to be taken if user chooses to exit
                 cout << endl;
                 cout << "Mohammad  Security Systems"<<endl;
-                cout <<"2-25-2019"<<endl;
+                cout << "2-25-2019"<<endl;
                 exit(0);
             }
             cin.ignore ();
             
             cout << "Enter your Message: "<<endl;//Asking for user message
             getline(cin,userMessage);
-            cout<<"Enter the key number (1-35)\n ";//Asking for key value
-            cin>>key;
+            cout << "Enter the key number (1-35)\n ";//Asking for key value
+            cin >> key;
         }
         
         if(userChoice == "encrypt"){//Calls encrypting function if user chooses to encrypt
@@ -128,7 +128,7 @@ void encrypting(int key, string userMessage){
                             shiftedAlphaNum[i][k] = shiftedAlphaNum[i][k] -43;
                         
               }
-            }
+           }
         }
     }
     
@@ -205,7 +205,7 @@ void decryption(int key, string userMessage){
     for(int i = 0; i < userMessage.size(); i++){//Prints the encrypted text out to screen
         for(int j=0; j < alphaNum.size(); j++){
             
-            if(userMessage[i] == shiftedAlphaNum[1][j])
+            if (userMessage[i] == shiftedAlphaNum[1][j])
                 cout << shiftedAlphaNum[0][j];
         }
         if (userMessage[i] == ' '){
