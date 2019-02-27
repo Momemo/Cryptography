@@ -13,7 +13,7 @@ void encrypting(int,string); // encrypts the user message according to the key
 void decryption(int,string); // decrypts the user message according to the key
 int main()
 {
-    cout << "Welcome to Cryptography"<<endl << endl;
+    cout << "Welcome to Cryptography" << endl << endl;
     validate(); //Function call for validation
     return 0;
 }
@@ -31,7 +31,7 @@ void validate(){
         cout << "Enter your choice: ";
         cin > >userChoice;
         
-        while(userChoice != "encrypt" && userChoice != "decrypt" && userChoice != "exit"){
+        while (userChoice != "encrypt" && userChoice != "decrypt" && userChoice != "exit"){
             cout << "Invalid message"<< endl << endl;
             cout << "What would you like to do to a message? (encrypt, decrypt, exit) "<<endl;
             cout << "Enter your choice: ";
