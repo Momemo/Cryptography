@@ -29,13 +29,15 @@ void validate(){
     while (userChoice != "exit"){
         cout << "What would you like to do to a message? (encrypt, decrypt, exit)" << endl;
         cout << "Enter your choice: ";
-        cin > >userChoice;
+        cin >> userChoice;
+        cin.ignore();
         
         while (userChoice != "encrypt" && userChoice != "decrypt" && userChoice != "exit"){
             cout << "Invalid message"<< endl << endl;
             cout << "What would you like to do to a message? (encrypt, decrypt, exit) "<<endl;
             cout << "Enter your choice: ";
             cin >> userChoice;
+            cin.ignore();
         }
         
         if (userChoice == "exit"){ //Action to take if user chooses to exit
@@ -43,7 +45,6 @@ void validate(){
             cout << "Mohammad Security Systems"<<endl;
             exit(0);
         }
-        cin.ignore();
         
         cout << "Enter your Message: "<<endl;//Asking for input for the message
         getline(cin,userMessage);
@@ -55,6 +56,7 @@ void validate(){
             cout << "What would you like to do to a message? (encrypt, decrypt, exit) \n"
             << "Enter your choice: ";
             cin >> userChoice;
+            cin.ignore ();
             
             if (userChoice == "exit"){//Action to be taken if user chooses to exit
                 cout << endl;
@@ -62,7 +64,7 @@ void validate(){
                 cout << "2-25-2019"<<endl;
                 exit(0);
             }
-            cin.ignore ();
+           
             
             cout << "Enter your Message: "<<endl;//Asking for user message
             getline(cin,userMessage);
@@ -214,6 +216,5 @@ void decryption(int key, string userMessage){
         
     }
     cout << endl;
-    
 }
 
